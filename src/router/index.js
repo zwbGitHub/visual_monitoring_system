@@ -1,28 +1,48 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
-
-Vue.use(VueRouter);
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import ScreenPage from '../views/ScreenPage.vue'
+Vue.use(VueRouter)
 
 const routes = [
   {
-    path: "/",
-    name: "Home",
-    component: Home,
+    name: 'ScreenPage',
+    path: '/',
+    component: ScreenPage
   },
   {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+    name: 'SellerPage',
+    path: '/sellerpage',
+    component: () => import('../views/SellerPage.vue')
   },
-];
+  {
+    name: 'TrendPage',
+    path: '/trendpage',
+    component: () => import('../views/TrendPage.vue')
+  },
+  {
+    name: 'MapPage',
+    path: '/mappage',
+    component: () => import('../views/MapPage.vue')
+  },
+  {
+    name: 'RankPage',
+    path: '/rankpage',
+    component: () => import('../views/RankPage.vue')
+  },
+  {
+    name: 'HotProductPage',
+    path: '/hotproductpage',
+    component: () => import('../views/HotProductPage.vue')
+  },
+  {
+    name: 'StockPgae',
+    path: '/stockpage',
+    component: () => import('../views/StockPage.vue')
+  }
+]
 
 const router = new VueRouter({
-  routes,
-});
+  routes
+})
 
-export default router;
+export default router
