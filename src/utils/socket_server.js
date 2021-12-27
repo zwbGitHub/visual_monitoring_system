@@ -41,7 +41,7 @@ export default class SocketService {
           const realData = JSON.parse(recvData.data)
           // console.log(this)
           this.callbackMapData[socketType].call(this, realData) // 此处可以不使用call调用，直接调用也可以，应为传过来的getData中的this始终为vc实例对象
-        } else if ( action === 'fullScreen') {
+        } else if (action === 'fullScreen') {
           this.callbackMapData[socketType].call(this, recvData)
         } else if (action === 'themeChange') {
           this.callbackMapData[socketType].call(this, recvData)

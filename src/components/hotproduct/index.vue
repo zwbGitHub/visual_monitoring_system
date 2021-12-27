@@ -196,11 +196,11 @@ span {
 .left-btn {
   left: 10%;
   top: 60%;
-  color: pink
+  color: pink;
 }
 .right-btn {
   right: 10%;
   top: 60%;
-  color: pink
+  color: pink;
 }
 </style>

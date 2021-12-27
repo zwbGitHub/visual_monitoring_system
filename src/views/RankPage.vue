@@ -1,19 +1,17 @@
 <template>
   <div class="client-page">
-      <rank></rank>
+    <rank></rank>
   </div>
 </template>
 
 <script>
 import Rank from '../components/rank'
 export default {
-    name:'RankPage',
-    components:{
-        Rank
-    }
+  name: 'RankPage',
+  components: {
+    Rank
+  }
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

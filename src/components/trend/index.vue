@@ -1,12 +1,13 @@
 <template>
   <div class="chart-wrapper">
-    <div
-      class="select-container"
-    >
-      <span  :style="{
+    <div class="select-container">
+      <span
+        :style="{
           fontSize: titleFontSize,
           color: theme === 'dark' ? 'white' : ''
-        }">┃</span>
+        }"
+        >┃</span
+      >
       <select
         v-model="selectValue"
         class="select-wrapper"
@@ -20,8 +21,8 @@
           :key="item.key"
           :value="item.key"
           :style="{
-          color: theme === 'dark' ? 'black' : ''
-        }"
+            color: theme === 'dark' ? 'black' : ''
+          }"
         >
           {{ item.text }}
         </option>

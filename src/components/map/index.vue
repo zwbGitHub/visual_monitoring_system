@@ -78,7 +78,6 @@ export default {
           }, 500)
         }
       })
-
       // 双击返回中国地图
       this.myChart.on('dblclick', () => {
         if (this.nowMap !== 'china') {
@@ -88,7 +87,9 @@ export default {
       // 在获取数据前，显示加载loading
       this.myChart.showLoading()
       const { data } = await axios.get('/static/map/china.json')
+      // const data = require('@/assets/map/china.json')
       this.allMap.china = data
+      // this.$set(this.allMap, 'china', data)
       // 请求获取数据后影藏loading加载
       this.myChart.hideLoading()
       this.$echarts.registerMap('china', this.allMap.china)
@@ -198,7 +199,7 @@ export default {
     },
     screenAdapter() {
       let adapterFont = this.$refs.chart.offsetWidth / 29
-      const adapterOption = {
+      this.myChart.setOption({
         title: {
           textStyle: {
             fontSize: adapterFont / 1.3
@@ -214,8 +215,7 @@ export default {
             fontSize: adapterFont / 2.2 // 图例文字
           }
         }
-      }
-      this.myChart.setOption(adapterOption)
+      })
       this.myChart.resize()
     }
   }
