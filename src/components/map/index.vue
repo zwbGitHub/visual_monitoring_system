@@ -86,7 +86,7 @@ export default {
       })
       // 在获取数据前，显示加载loading
       this.myChart.showLoading()
-      const { data } = await axios.get('/static/map/china.json')
+      const { data } = await axios.get('./static/map/china.json')
       // const data = require('@/assets/map/china.json')
       this.allMap.china = data
       // this.$set(this.allMap, 'china', data)
@@ -179,7 +179,7 @@ export default {
       if (!this.allMap[provincePinyin] && this.nowMap === 'china') {
         try {
           const { data } = await axios.get(
-            `/static/map/province/${provincePinyin}.json`
+            `./static/map/province/${provincePinyin}.json`
           )
           this.allMap[provincePinyin] = data
         } catch (error) {
